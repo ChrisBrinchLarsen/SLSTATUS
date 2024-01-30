@@ -65,7 +65,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format        argument */
-	{ disk_free," %s-", "/home/zupreme"},    
+	{ cat,      " %s ",  "/home/zupreme/suckless/slstatus/pkgCount.txt" },
+	{ disk_free,"󱉲 %s-", "/home/zupreme"},    
 	{ disk_perc,"%s%% ","/home/zupreme"}, 
 	{ cpu_perc, " %s%% ",    NULL    },
 	{ ram_perc, " %s%% ",    NULL    },
