@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
-
+#import "masterConfig.h"
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = updateInterval;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -66,8 +66,8 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format        argument */
 	{ cat,      " %s ",  "/home/zupreme/suckless/slstatus/pkgCount.txt" },
-	{ disk_free,"󱉲 %s-", "/home/zupreme"},    
-	{ disk_perc,"%s%% ","/home/zupreme"}, 
+	{ disk_free,"󱉲 %s-", pathToHome},    
+	{ disk_perc,"%s%% ", pathToPkgCountTXT}, 
 	{ cpu_perc, " %s%% ",    NULL    },
 	{ ram_perc, " %s%% ",    NULL    },
 	{ datetime, "󱑂 %s",           "%T"    },
