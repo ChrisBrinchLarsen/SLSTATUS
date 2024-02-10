@@ -63,12 +63,14 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
+
+// char* home = getenv("HOME");
 static const struct arg args[] = {
 	/* function format        argument */
-	{ cat,      " %s ",  "/home/zupreme/suckless/slstatus/pkgCount.txt" },
+	{ cat,      " %s ", pathToPkgCountTXT},
 	{ disk_free,"󱉲 %s-", pathToHome},    
-	{ disk_perc,"%s%% ", pathToPkgCountTXT}, 
+	{ disk_perc,"%s%% ", pathToHome}, 
 	{ cpu_perc, " %s%% ",    NULL    },
-	{ ram_perc, " %s%% ",    NULL    },
-	{ datetime, "󱑂 %s",           "%T"    },
+	{ ram_perc, " %s%% |",    NULL    },
+	{ datetime, " %s", "%a %-d %b %0k%0M"},
 };
