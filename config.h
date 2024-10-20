@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
-#import "masterConfig.h"
+
 /* interval between updates (in ms) */
-const unsigned int interval = updateInterval;
+const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -11,13 +11,6 @@ static const char unknown_str[] = "n/a";
 
 /*
  * function            description                     argument (example)
- *
- * battery_perc        battery percentage              battery name (BAT0)
- *                                                     NULL on OpenBSD/FreeBSD
- * battery_remaining   battery remaining HH:MM         battery name (BAT0)
- *                                                     NULL on OpenBSD/FreeBSD
- * battery_state       battery charging state          battery name (BAT0)
- *                                                     NULL on OpenBSD/FreeBSD
  * cat                 read arbitrary file             path
  * cpu_freq            cpu frequency in MHz            NULL
  * cpu_perc            cpu usage in percent            NULL
@@ -63,14 +56,14 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
-
-// char* home = getenv("HOME");
 static const struct arg args[] = {
-	/* function format        argument */
-	{ cat,      " %s ", pathToPkgCountTXT},
-	{ disk_free,"󱉲 %s-", pathToHome},    
-	{ disk_perc,"%s%% ", pathToHome}, 
-	{ cpu_perc, " %s%% ",    NULL    },
-	{ ram_perc, " %s%% |",    NULL    },
-	{ datetime, " %s", "%a %-d %b %0k%0M"},
+       /* module         format              argument */
+	//{ netspeed_rx,  "󰇚 %s ",              "enp4s0" },
+	//{ netspeed_tx,  "󰕒 %s | ",           "enp4s0" },
+	{ disk_used,     " %s/",            "/"      },
+	{ disk_total,    "%s",               "/"      },
+	{ disk_perc,     " (%s%%) | ",       "/"      },
+	{ ram_perc,      " %s%% | ",        NULL     },
+	{ cpu_perc,      " %s%% | ",        NULL     },
+	{ datetime,      "%s",               "%a %d %b %H%M"},
 };
