@@ -64,6 +64,7 @@ static const struct arg args[] = {
 	{ disk_total,    "%s",               "/"      },
 	{ disk_perc,     " (%s%%) | ",       "/"      },
 	{ ram_perc,      " %s%% | ",        NULL     },
-	{ cpu_perc,      " %s%% | ",        NULL     },
+	{ cpu_perc,      " %s%%",           NULL     },
+	{ temp,      " (%s°) | ",          "/sys/class/thermal/thermal_zone1/temp"     },
 	{ datetime,      "%s",               "%a %d %b %H%M"},
 };
